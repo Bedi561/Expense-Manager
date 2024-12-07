@@ -1,0 +1,157 @@
+/* App.css */
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #f3f4f6; /* Soft light gray for the background */
+  color: #333; /* Neutral text color */
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+/* Main Container */
+div {
+  max-width: 600px;
+  width: 100%;
+  background-color: #ffffff; /* White for the card container */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  padding: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+
+div:hover {
+  transform: translateY(-3px); /* Slight lift effect on hover */
+}
+
+/* Title Styling */
+h2 {
+  text-align: center;
+  color: #4a90e2; /* Modern blue for the heading */
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* Input Section */
+input {
+  width: calc(100% - 20px);
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  outline: none;
+  color: #000000; /* Text will appear black */
+  background-color: #ffffff; /* Ensure input background is white for readability */
+}
+
+input::placeholder {
+  color: #aaaaaa; /* Placeholder text color */
+}
+
+input:focus {
+  border-color: #4a90e2; /* Highlighted border on focus */
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+
+/* Buttons */
+button {
+  display: block; /* Make the button a block-level element */
+  margin: 20px auto 0; /*Center the button horizontally and add 20px padding to the top*/
+  padding: 10px 20px;
+  background-color: #4a90e2; /* Primary blue */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #357abd; /* Slightly darker blue on hover */
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+
+/* Expense List */
+.expense-list {
+  list-style: none;
+  margin-top: 18px;
+  padding: 0;
+}
+.expense-list li {
+  display: flex; /* Enables flexbox on each list item */
+  justify-content: flex-start; /* Aligns title and amount to the left */
+  align-items: center; /* Vertically align all items */
+  padding: 12px;
+  position: relative; /* Allows button positioning */
+  font-weight: bold; /* Makes the title and amount bold */
+}
+
+.expense-list li span {
+  font-size: 1.2rem;
+  color: #333;
+  margin-right: 20px; /* Adds spacing between the title and amount */
+}
+
+.expense-list li span.amount {
+ margin-left: 30%;/* Pushes the amount to the far right of the available space */
+  margin-right: 100px; /* Adds spacing from the delete button */
+  font-size: 1.2rem; /* Increases size of the amount */
+  color: #333; /* Color the amount to stand out */
+}
+
+.expense-list li button {
+  position: absolute; /* Positions the button relative to the parent <li> */
+  right: 10px; /* Positions the button 10px from the right side of the container */
+  padding: 6px 12px;
+  margin-bottom: 3%;
+  font-size: 1.2rem;
+  background-color: #f87171; /* Soft red for delete button */
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.expense-list li button:hover {
+  background-color: #f44336; /* Darker red on hover */
+  transform: scale(1.05); /* Slight enlargement on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  input[type="text"] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .expense-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .expense-list li button {
+    margin-top: 8px;
+    align-self: flex-end;
+  }
+}
